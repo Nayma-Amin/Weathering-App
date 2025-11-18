@@ -1,0 +1,13 @@
+# Ignore all platform-specific code for language stats
+android/* linguist-vendored
+ios/* linguist-vendored
+macos/* linguist-vendored
+linux/* linguist-vendored
+windows/* linguist-vendored
+web/* linguist-vendored
+*.cmake linguist-vendored
+*.xml linguist-vendored
+*.swift linguist-vendored
+*.kt linguist-vendored
+*.java linguist-vendored
+*.html linguist-vendored
