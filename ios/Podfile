@@ -1,0 +1,17 @@
+platform :ios, '13.0'
+
+use_frameworks!
+use_modular_headers!
+
+target 'Runner' do
+  # Pods for Runner
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    # Workaround for Xcode 12+ build issues
+    target.build_configurations.each do |config|
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+    end
+  end
+end
