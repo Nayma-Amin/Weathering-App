@@ -69,15 +69,14 @@ class _WeatheringScreenHomeState extends State<WeatheringScreenHome> {
   }
 
   @override
-void initState() {
-  super.initState();
+  void initState() {
+    super.initState();
 
-  cityController.text = defaultCity;
-  countryController.text = defaultCountry;
+    cityController.text = defaultCity;
+    countryController.text = defaultCountry;
 
-  weather = getCurrentWeather();
-}
-
+    weather = getCurrentWeather();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,22 +95,21 @@ void initState() {
           IconButton(
             icon: const Icon(Icons.refresh, color: Colors.white),
             onPressed: () {
-  setState(() {
-    cityController.text = defaultCity;
-    countryController.text = defaultCountry;
-    weather = getCurrentWeather();
-  });
+              setState(() {
+                cityController.text = defaultCity;
+                countryController.text = defaultCountry;
+                weather = getCurrentWeather();
+              });
 
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(
-        "Back to default Dhaka, Bangladesh weather",
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
-    ),
-  );
-},
-
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    "Back to default Dhaka, Bangladesh weather",
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -288,54 +286,76 @@ void initState() {
                           child: Column(
                             children: [
                               Row(
-  children: [
-    Expanded(
-      child: TextField(
-        controller: cityController,
-        style: const TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-        decoration: InputDecoration(
-          labelText: 'City',
-          labelStyle: const TextStyle(color: Colors.white70),
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white70),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ),
-    ),
+                                children: [
+                                  Expanded(
+                                    child: TextField(
+                                      controller: cityController,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      decoration: InputDecoration(
+                                        labelText: 'City',
+                                        labelStyle: const TextStyle(
+                                          color: Colors.white70,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Colors.white70,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
 
-    const SizedBox(width: 12), // <-- spacing between textfields
+                                  const SizedBox(
+                                    width: 12,
+                                  ), // <-- spacing between textfields
 
-    Expanded(
-      child: TextField(
-        controller: countryController,
-        style: const TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-        decoration: InputDecoration(
-          labelText: 'Country',
-          labelStyle: const TextStyle(color: Colors.white70),
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white70),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ),
-    ),
-  ],
-),
+                                  Expanded(
+                                    child: TextField(
+                                      controller: countryController,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      decoration: InputDecoration(
+                                        labelText: 'Country',
+                                        labelStyle: const TextStyle(
+                                          color: Colors.white70,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Colors.white70,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                               const SizedBox(height: 12),
 
                               ElevatedButton(
