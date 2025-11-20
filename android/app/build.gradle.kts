@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.weathering_app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = "29.0.14206865"
 
     compileOptions {
@@ -24,10 +24,10 @@ android {
         applicationId = "com.example.weathering_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        targetSdk = 34
+    minSdk = flutter.minSdkVersion
+    versionCode = flutter.versionCode
+    versionName = flutter.versionName
     }
 
     buildTypes {
